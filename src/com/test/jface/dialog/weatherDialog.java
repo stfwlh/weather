@@ -59,6 +59,7 @@ public class weatherDialog extends Dialog {
         button.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
+                System.out.println("click OK");
             }
         });
         createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
