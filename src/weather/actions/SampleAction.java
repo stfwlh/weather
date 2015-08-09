@@ -6,6 +6,8 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.jface.dialogs.MessageDialog;
 
+import com.test.jface.dialog.weatherDialog;
+
 /**
  * Our sample action implements workbench action delegate.
  * The action proxy will be created by the workbench and
@@ -29,10 +31,12 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 	 * @see IWorkbenchWindowActionDelegate#run
 	 */
 	public void run(IAction action) {
-		MessageDialog.openInformation(
-			window.getShell(),
-			"com.test.Weather",
-			"Hello，Eclipse world");
+//		MessageDialog.openInformation(
+//			window.getShell(),
+//			"com.test.Weather",
+//			"Hello，Eclipse 	    MessageDialog.o
+		weatherDialog w = new weatherDialog(window.getShell());
+		w.open();
 	}
 
 	/**

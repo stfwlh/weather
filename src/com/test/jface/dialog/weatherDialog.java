@@ -10,6 +10,10 @@
  */
 package com.test.jface.dialog;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.swt.graphics.Point;
@@ -59,6 +63,12 @@ public class weatherDialog extends Dialog {
         button.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
+                IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+                String path = Platform.getInstanceLocation().getURL().getPath();
+                System.out.println(path);
+                System.out.println(root.getFullPath());
+                IResource iRes = root.findMember("test");
+                System.out.println(iRes.getFullPath());
                 System.out.println("click OK");
             }
         });
